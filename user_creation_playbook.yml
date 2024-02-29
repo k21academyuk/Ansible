@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Create a group
+      group:
+        name: developers
+        state: present
+
+    - name: Create a user
+      user:
+        name: Karthik
+        group: developers
+        password: K21Academy
+        state: present
