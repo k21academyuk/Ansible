@@ -9,7 +9,7 @@
 
     - name: Create a user
       user:
-        name: Karthik
+        name: karthik
         group: developers
-        password: K21Academy
+        password: "{{ 'K21Academy' | password_hash('sha512') }}"
         state: present
