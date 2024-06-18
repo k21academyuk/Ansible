@@ -1,0 +1,11 @@
+---
+- hosts: all                     # This playbook will run on all hosts
+  tasks:
+    - name: creates users files  # Name of the task
+      file:
+        path: /tmp/ansible-{{ item }}  # Path of the file to be created, using the loop variable
+        state: touch             # Ensure the file is present; if it doesn't exist, create it
+      loop:
+        - sammy                  # Loop variable value (first iteration)
+        - erika                  # Loop variable value (second iteration)
+        - brian                  # Loop variable value (third iteration)
